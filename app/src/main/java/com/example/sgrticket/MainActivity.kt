@@ -1,5 +1,6 @@
 package com.example.sgrticket
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -28,6 +29,13 @@ class MainActivity : AppCompatActivity() {
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
+            val intent=Intent(Intent.ACTION_SEND)
+            intent.type="text/plain"
+            intent.putExtra(Intent.EXTRA_EMAIL,"vanessakamunya@gmail.com")
+            intent.putExtra(Intent.EXTRA_TEXT,"Ticket booking details")
+            if (intent.resolveActivity(packageManager)!= null){
+                startActivity(intent)
+            }
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }

@@ -68,7 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:text="@string/sign_up2"/>
+            android:text="@string/sign_up2"
+            android:backgroundTint="@color/red"/>
         <TextView
             android:id="@+id/LogInText"
             android:layout_width="wrap_content"
