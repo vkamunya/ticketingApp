@@ -16,5 +16,10 @@
         android:orderInCategory="100"
         android:title="Quit"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/delete"
+        android:orderInCategory="100"
+        android:title="Delete Account"
+        app:showAsAction="never"/>
 
 </menu>

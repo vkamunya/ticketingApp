@@ -42,7 +42,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:text="@string/login"
-        android:backgroundTint="@color/red"/>
+        android:backgroundTint="@color/red"
+        />
     <TextView
         android:id="@+id/SignUpText"
         android:layout_width="wrap_content"
