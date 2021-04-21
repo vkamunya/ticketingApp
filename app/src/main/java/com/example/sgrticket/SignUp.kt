@@ -19,6 +19,7 @@ import org.json.JSONObject
 import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
+import java.util.regex.Pattern
 
 private lateinit var binding: ActivitySignUpBinding
 class SignUp : AppCompatActivity() {
@@ -38,10 +39,8 @@ class SignUp : AppCompatActivity() {
         binding.LogInText.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-
         }
     }
-
     companion object {
         class MyAsyncTask internal constructor(context: Context) : AsyncTask<String, String, String>() {
             lateinit var con: HttpURLConnection
@@ -55,6 +54,7 @@ class SignUp : AppCompatActivity() {
                 val password: String = binding.pass2txt.text.toString()
                 val email: String = binding.emailtxt.text.toString()
 
+
                 val progressBar = ProgressBar(cont)
                 progressBar.isIndeterminate = true
                 progressBar.visibility = View.VISIBLE
@@ -66,9 +66,7 @@ class SignUp : AppCompatActivity() {
                 builder.appendQueryParameter("password", password)
                 builder.appendQueryParameter("email", email)
 
-
-
-
+                
             }
 
             override fun doInBackground(vararg params: String?): String? {

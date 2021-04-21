@@ -12,7 +12,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.example.sgrticket.databinding.ActivityMain2Binding
+import com.example.sgrticket.models.Ticket
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.OutputStreamWriter
@@ -21,6 +24,7 @@ import java.net.URL
 
 private lateinit var binding: ActivityMain2Binding
 lateinit var progressBar: ProgressBar
+
 class MainActivity2 : AppCompatActivity() {
     val query: String? = null
 
@@ -35,6 +39,14 @@ class MainActivity2 : AppCompatActivity() {
 
         binding.LoginBtn.setOnClickListener {
             val login = MyAsyncTask(applicationContext)
+            val password: String = binding.passtxt.text.toString()
+            if(password.trim().length>0) {
+                Toast.makeText(applicationContext, "Login successful", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(applicationContext, "Password cannot be empty ", Toast.LENGTH_SHORT).show()
+            }
+
+
             login.execute()
 
 
@@ -49,6 +61,7 @@ class MainActivity2 : AppCompatActivity() {
         class MyAsyncTask internal constructor(context: Context) : AsyncTask<String, String, String>() {
             lateinit var con: HttpURLConnection
             lateinit var resulta: String
+
             val builder = Uri.Builder()
             private val cont: Context = context
             override fun onPreExecute() {
@@ -60,6 +73,8 @@ class MainActivity2 : AppCompatActivity() {
 
                 val phone: String = binding.phonetxt.text.toString()
                 val password: String = binding.passtxt.text.toString()
+
+
 
 
                 builder.appendQueryParameter("phone", phone)
@@ -100,19 +115,24 @@ class MainActivity2 : AppCompatActivity() {
                 val progressBar = ProgressBar(cont)
                 progressBar.visibility = View.GONE
                 var json_data = JSONObject(resulta)
+                fun isResultaInitialized() = ::resulta.isInitialized
                 val code: Int = json_data.getInt("code")
                 Log.e("data", code.toString())
+
                 if (code == 1) {
                     //val com: JSONArray = json_data.getJSONArray("userdetails")
                     //  val comObject = com[0] as JSONObject
                     // Log.e("data",""+comObject.optString("fname"))
-                    val toMain = Intent(cont, allTickets::class.java)
-                    toMain.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+
+
+                    val toMain = Intent(cont, AllTickets::class.java)
+                    toMain.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     cont.startActivity(toMain)}
 
                 Log.e("data", json_data.toString())
 
             }
+
         }
     }
 

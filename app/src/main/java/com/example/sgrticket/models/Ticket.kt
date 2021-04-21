@@ -3,18 +3,18 @@ package com.example.sgrticket.models
 
 class Ticket {
 
-    var name: String? = null
-    var source: String? = null
-    var destination: String? = null
-    var ticketnumber: String? = null
-    var recordId: String? = null
+    var name: String? = ""
+    var source: String? = ""
+    var destination: String? = ""
+    var ticketnumber: String? = ""
 
-    constructor(name: String, source:String, destination: String, ticketnumber :String, recordId: String,){
+
+    constructor(name: String, source:String, destination: String, ticketnumber :String,){
         this.name = name
         this.source = source
         this.destination = source
         this.ticketnumber = source
-        this.recordId = recordId
+
     }
 
 

@@ -22,4 +22,8 @@
     <string name="email">Email</string>
     <string name="sign_up2">SIGN UP</string>
     <string name="login2">Login</string>
+    <string name="kelly_malaki">Kelly Malaki</string>
+    <string name="source_athi_river">Source: Athi River</string>
+    <string name="destination_mombasa">Destination: Mombasa</string>
+    <string name="ticket_number_85689779">Ticket Number: 85689779</string>
 </resources>

@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             if (intent.resolveActivity(packageManager)!= null){
                 startActivity(intent)
             }
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Share", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
@@ -69,11 +69,7 @@ class MainActivity : AppCompatActivity() {
 
         return super.onOptionsItemSelected(item)
     }
-
-
-
-
-
+    
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

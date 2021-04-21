@@ -42,14 +42,26 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:text="Password"/>
-    <EditText
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="@color/white"
+        app:passwordToggleDrawable="@drawable/passimg"
+        app:passwordToggleEnabled="true">
+
+        <EditText
         android:id="@+id/passtxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:paddingBottom="20dp"
-        />
+        android:inputType="textPassword"
+         />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

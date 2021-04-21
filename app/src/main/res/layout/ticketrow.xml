@@ -8,30 +8,29 @@
     <TextView
         android:id="@+id/cname"
         android:textSize="20sp"
-        android:text="Kelly Malaki"
+        android:text="@string/kelly_malaki"
         android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"/>
     <TextView
         android:id="@+id/source"
-        android:text="Source: Athi River"
+        android:text="@string/source_athi_river"
         android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"/>
     <TextView
         android:id="@+id/destination"
-        android:text="Destination: Mombasa"
+        android:text="@string/destination_mombasa"
         android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"/>
     <TextView
         android:id="@+id/ticketnumber"
-        android:text="Ticket Number: 85689779"
+        android:text="@string/ticket_number_85689779"
         android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
 </LinearLayout>
